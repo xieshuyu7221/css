@@ -1,0 +1,200 @@
+元素类型
+
+一、HTML元素分类
+根据css显示分类，HTML元素被分为三种类型:块状元素，内联元素，可变元素
+
+1.块状元素（block element） 
+  1）块状元素在网页中就是以块的形式显示，所谓块状就是元素显示为矩形区域，常用的块状元素包块div,dl,dt,dd,ol,ul,(h1-h6),p,form,hr,table,tr,td等；
+
+  2）默认情况下，块状元素都会占据一行，通俗地说，两个相邻块状元素不会出现并列显示的现象；默认情况下，块状元素会按顺序自上而下排列。
+
+  3）块状元素都可以定义自己的宽度和高度。 
+
+  4）块状元素一般都作为其他元素的容器，它可以容纳其它内联元素和其它块状元素。
+
+  我们可以把这种容器比喻为一个盒子。
+
+width不写 默认100%；
+
+
+2.内联元素（inline element）（或是行内元素、行间元素、内嵌元素）
+
+1) 常见的内联元素如：a,span,i,em,strong,b，img，input等
+
+2) 内联元素的表现形式是始终以行内逐个进行显示；
+
+3) 内联元素没有自己的形状，不能定义它的宽和高,它显示的宽度、高度只能根据所包含内容的高度和宽度来确定，它的最小内容单元也会呈现矩形形状；
+
+4) 内联元素也会遵循盒模型基本规则，如可以定义padding,border,margin,background等属性，但个别属性不能正确显示;
+
+
+
+
+
+
+
+3、可变元素
+
+需要根据上下文关系确定该元素是块元素或者内联元素。
+
+
+
+
+
+
+块元素(block element) 
+　　◎ address - 地址 
+　　◎ blockquote - 块引用 
+　　◎ center - 局中对齐块 
+　　◎ dir - 目录列表 
+　　◎ div - 常用块级容易，也是css layout的主要标签 
+　　◎ dl - 定义列表 
+　　◎ fieldset - form控制组 
+　　◎ form - 交互表单 
+　　◎ h1 - 大标题 
+　　◎ h2 - 副标题 
+　　◎ h3 - 3级标题 
+　　◎ h4 - 4级标题 
+　　◎ h5 - 5级标题 
+　　◎ h6 - 6级标题 
+　　◎ hr - 水平分隔线 
+　　◎ isindex - input prompt 
+　　◎ menu - 菜单列表 
+　　◎ noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容 
+　　◎ noscript - 可选脚本内容（对于不支持script的浏览器显示此内容） 
+　　◎ ol - 排序表单 
+　　◎ p - 段落 
+　　◎ pre - 格式化文本 
+　　◎ table - 表格 
+　　◎ ul - 非排序列表 
+
+
+内联元素(inline element) 
+　　◎ a - 锚点
+       ◎ abbr - 缩写 
+　　◎ acronym - 首字 
+　　◎ b - 粗体(不推荐) 
+　　◎ bdo - bidi override 
+　　◎ big - 大字体 
+　　◎ br - 换行 
+　　◎ cite - 引用 
+　　◎ code - 计算机代码(在引用源码的时候需要) 
+　　◎ dfn - 定义字段 
+　　◎ em - 强调 
+　　◎ font - 字体设定(不推荐) 
+　　◎ i - 斜体 
+　　◎ img - 图片 
+　　◎ input - 输入框 
+　　◎ kbd - 定义键盘文本 
+　　◎ label - 表格标签 
+　　◎ q - 短引用 
+　　◎ s - 中划线(不推荐) 
+　　◎ samp - 定义范例计算机代码 
+　　◎ select - 项目选择 
+　　◎ small - 小字体文本 
+　　◎ span - 常用内联容器，定义文本内区块 
+　　◎ strike - 中划线 
+　　◎ strong - 粗体强调 
+　　◎ sub - 下标 
+　　◎ sup - 上标 
+　　◎ textarea - 多行文本输入框 
+　　◎ tt - 电传文本 
+　　◎ u - 下划线 
+　　◎ var - 定义变量 
+
+可变元素 
+　　可变元素为根据上下文语境决定该元素为块元素或者内联元素。 
+　　◎ applet - java applet 
+　　◎ button - 按钮 
+　　◎ del - 删除文本 
+　　◎ iframe - inline frame 
+　　◎ ins - 插入的文本 
+　　◎ map - 图片区块(map) 
+　　◎ object - object对象 
+　　◎ script - 客户端脚本
+
+
+
+
+
+
+
+
+
+
+二、 元素类型的转换
+
+盒子模型可通过display属性来改变默认的显示类型
+
+1）display属性与属性值	(18个属性值)
+属性值：block/inline/inline-block/none/list-item/table-cell
+作用：该属性设置或检索对象元素应该生成的盒模型的类型。
+说明：各属性值的作用
+
+1)Block块状显示：类似在元素后面添加换行符，也就是说其他元素不能在其后面并列显示。
+2)inline内联显示：在元素后面删除换行符，多个元素可以在一行内并列显示。
+3)当元素设置了float属性后，就相当于给该元素加了display:block;属性；
+4)Inline-block行内块元素显示：元素的内容以块状显示，行内的其他元素显示在同一行。
+（只有这一个元素类型支持vertical-align属性）img,input。
+5)none 此元素不会被显示。
+6)list-item:将元素转换成列表。li的默认类型。
+7）
+
+1、大部分块元素display属性值默认为block，其中列表的默认值为list-item。
+2、大部分内联元素的display属性值默认为inline,其中img,input，默认为inline-block。
+
+
+
+
+
+
+三、置换元素
+
+在之前的谈HTML中的块级元素和内联元素中了解到了内联元素一般是不能设置宽高的，但是也有特殊，比如img是内联元素，但可以设置宽高，这肯定让不少人迷惑。这样我们就要引入HTML中置换元素的概念。
+
+a) 置换元素：浏览器根据元素的标签和属性，来决定元素的具体显示内容。
+
+例如：浏览器会根据<img>标签的src属性的值来读取图片信息并显示出来，而如果查看html代码，则看不到图片的实际内容；<input>标签的type属性来决定是显示输入框，还是单选按钮等。
+
+b) 不可替换元素：html 的大多数元素是不可替换元素，即其内容直接表现给用户端（如浏览器）。
+
+
+
+
+
+
+
+
+
+
+
+四、垂直对齐方式vertical-align:middle
+
+第一种用法，先看后面一句“在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。”这很容易理解，如果给一个表格的td加一个vertical-align:middle的样式，表格里面的内容会垂直居中，同样的如果给一个vertical-align:bottom就会底部对齐，如果给一个vertical-align:top就会顶部对齐。
+
+第二种用法，“该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。”专业的语言我不会说的，可以打个比喻：假设有两个行内元素a和b，a和b都是img，当a加了一个vertical-align:middle样式之后，b的底部（基线）就会对齐a的中间位置
+
+
+img{display:inline-block;vertical-align:middle;}
+span{display:inline-block;vertical-align:middle; width:0px; height:100%;}
+
+
+
+五、关于属性的继承
+
+1）什么叫继承？
+父盒子的属性，如果子盒子能够读取得到，那么就是可以继承。
+
+2）不可继承的：display、margin、border、padding、background、height、min-height、max-height、width、min-width、max-width、overflow、position、left、right、top、bottom、z-index、float、clear、table-layout、vertical-align、page-break-after、page-bread-before和unicode-bidi。
+
+3）文本可继承：letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction、text-indent和text-align。
+
+4）列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。
+
+
+
+5)  透明度
+
+
+
+

@@ -1,0 +1,71 @@
+1、oveflow的取值有哪些 
+hidden    scroll   auto   visible  inherit
+
+2、写出书写省略号必备的几条属性
+div{width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+3、文本修饰的取值有哪些
+overline  underline  line-through  none
+
+4、常用的一种引用外部样式的写法
+<link  rel="stylesheet" type="text/css" href="" />
+
+5、基本选择符的权重分别是
+id 100 >  class 10 > div 1
+
+6、哪种样式表的权重最大
+内联
+
+7、为什么清间距不推荐使用通配符*
+
+8、请写出5个表单元素
+<input type="text" />
+<input type="password" />
+<input type="radio" />
+<input type="checkbox" />
+<input type="submit" />
+<input type="reset" />
+
+9、鼠标移上变小手是？
+cursor:pointer;
+
+10、盒模型的组成
+margin  border  padding  content
+
+11、web标准包括
+结构  表现  行为
+
+12、html5 和 html的关系
+第五个版本
+
+13、背景的几个子属性分别是
+background-color/image/repeat/position/attachment
+
+14、背景固定及取值分别是
+background-attachment:fixed/scroll;
+
+15、合并单元格是哪两个属性
+rowspan/colspan
+
+16、去除默认样式使用哪种选择符
+类型选择符
+
+17、font-family有多属性值时，之间用什么隔开
+逗号
+
+18、文本两端对齐是
+text-align:justify;
+
+19、写出导航的基本结构
+<ul>
+	<li><a href="#">首页</a></li>
+	<li><a href="#">首页</a></li>
+	<li><a href="#">首页</a></li>
+	<li><a href="#">首页</a></li>
+	<li><a href="#">首页</a></li>
+</ul>
+
+20、html和css的英文全称
+hyper text  markup language
+cascading  style  sheet
+

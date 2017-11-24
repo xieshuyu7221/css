@@ -1,0 +1,151 @@
+一、渐变  IE10+
+
+线性渐变linear-gradient
+background-image：linear-gradient（方向，起始颜色，结束颜色）
+
+处理兼容：
+background-image：-webkit-linear-gradient（to top，red，yellow）
+background-image：-moz-linear-gradient（to top，red，yellow）
+background-image：-o-linear-gradient（to top，red，yellow）
+background-image：-ms-linear-gradient（to top，red，yellow）
+background-image：linear-gradient（to top，red，yellow）
+
+方向可以使用角度（30deg）也可以使用关键字（to right等）；
+to top:0deg  360deg   -360deg;
+to bottom:180deg   -180deg;
+to right:90deg -270deg;
+to left:-90deg 270deg;
+to top left:从右下角到左上角；
+...
+
+颜色可设置为透明：transparent；
+
+多色线性渐变，只需在后面添加更多的颜色即可；
+background-image：linear-gradient（to top，red，yellow，blue，green，orange）
+
+自定义线性渐变
+background-image：linear-gradient(
+	to top,
+	rgba(255,206,0,.5) 0%,
+	rgba(255,255,0,.4) 10%,
+	rgba(255,104,0,.6) 15%,
+	rgba(255,0,255,.5) 20%,
+	rgba(255,0,206,.8) 40%,
+	rgba(255,0,200,.5) 50%,
+	rgba(255,0,222,.9) 60%,
+	rgba(255,123,0,.2) 80%,
+	rgba(255,108,0,.5) 100%
+	)
+
+
+
+
+重复线性渐变
+background-image：repeating-linear-gradient(
+	to top,
+	rgba(255,206,0,.5) 40px,
+	rgba(255,255,0,.4) 80px
+	)
+
+
+
+径向渐变radial-gradient
+background-image：radial-gradient（形状  at  圆心坐标，颜色）
+
+background-image:radial-gradient(主要半径 次要半径 at 水平 垂直,red,yellow)
+background-image:radial-gradient(50px 100px at 200px 250px,red,yellow)
+
+background-image:radial-gradient(主次半径相等就是圆 at 水平 垂直,red,yellow)
+background-image:radial-gradient(circle at right bottom,red,yellow)
+
+background-image:radial-gradient(主次半径不相等是椭圆 at 水平 垂直,red,yellow)
+background-image:radial-gradient(ellipse at top,red,yellow)
+
+background-image:radial-gradient(圆心与中心重合,red,yellow)
+background-image:radial-gradient(circle,red,yellow)
+
+重复径向渐变
+background-image：repeating-radial-gradient(
+	to top,
+	rgba(255,206,0,.5) 40px,
+	rgba(255,255,0,.4) 80px
+	)
+
+
+
+
+
+
+
+二、过渡  IE10+
+
+transition：过渡属性  过渡所需时间   过渡动画函数  过渡延迟时间； 
+transition：property  duration     timing-function   delay;
+
+各个属性可以分开写，一次可以过渡多个属性：
+-webkit-transition-property:background,width,height;
+-webkit-transition-duration:1s,1s,1s;
+-webkit-transition-timing-function:linear,linear,linear;
+-webkit-transition-delay:1s,0s,2s;
+
+-moz-transition-property:background,width,height;
+-moz-transition-duration:1s,1s,1s;
+-moz-transition-timing-function:linear,linear,linear;
+-moz-transition-delay:1s,0s,2s;
+
+-ms-transition-property:background,width,height;
+-ms-transition-duration:1s,1s,1s;
+-ms-transition-timing-function:linear,linear,linear;
+-ms-transition-delay:1s,0s,2s;
+
+-o-transition-property:background,width,height;
+-o-transition-duration:1s,1s,1s;
+-o-transition-timing-function:linear,linear,linear;
+-o-transition-delay:1s,0s,2s;
+
+transition-property:background,width,height;
+transition-duration:1s,1s,1s;
+transition-timing-function:linear,linear,linear;
+transition-delay:1s,0s,2s;
+
+过渡动画函数timing-function
+ease  先快后慢，逐渐变慢
+linear  匀速
+ease-in  速度越来越快，称为渐显效果
+ease-out  速度越来越慢，称为渐隐效果
+ease-in-out  先加速再减速，称为渐显渐隐效果
+cubic-bezier(.61,.17,.92,.1)  三次贝塞尔曲线
+
+
+
+
+
+三、变形transform
+
+2D变形 transform-function：
+
+1）translate移动（水平偏移量 向右为正 , 垂直偏移量 向下为正）
+   如果只有水平方向发生偏移，y的0可以省略不写；
+   transform：translate（100px） 向右偏移100px;
+   单一方向偏移可以直接使用：translateX() 和translateY();
+
+2）scale缩放（X轴方向的缩放量 , Y轴方向的放量）
+   绝对值小于1为缩小，大于1放大；
+   只写一个值代表四周同时放大缩小；
+   取值可以为负数，负数时会进行翻转后再缩放;
+
+3）rotate旋转（角度，正数时顺时针旋转，负数时逆时针旋转）
+
+4）skew倾斜（X轴方向倾斜，Y轴方向倾斜）
+   如果只有X轴方向发生倾斜，y的0可以省略不写；
+   transform：skew（45deg） 相当于skew(45deg,0);
+   单一方向倾斜可以直接使用：skewX() 和skewY();
+
+transform-origin 指定元素的中心点位置
+
+可以是百分数，数值，方向单词（top left right bottom center）;
+
+transform-origin：50% 50%；
+
+
+

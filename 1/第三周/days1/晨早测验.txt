@@ -1,0 +1,66 @@
+1、脱离标准流有哪两种方式？
+浮动  定位
+
+2、请让一个宽高分别为100px的div在窗口中垂直水平都居中。
+div{ width:100px; height:100px; background:#f60;  position:fixed; top:50%; left:50%; margin-top:-50px; margin-left:-50px;}
+
+3、绝对定位有什么特点（3点）？
+子绝父相
+脱标不占位
+不写坐标留原位
+
+4、如何让图片在一个盒子里垂直居中？请写出具体css代码。
+img{ vertical-align:middle;}
+span{ vertical-align:middle; display:inline-block; width:0; height:100%;}
+
+5、请写出5个块级元素 
+h1-h6   p  div  ul  li  ol  dl  dt  dd  body
+
+6、定位有哪些取值？分别是什么意思？
+relative
+absolute
+fixed
+static
+
+7、如何实现宽度因其内容多少自适应？
+float   absolute   inline-block
+
+8、li默认得display是什么？
+list-item
+
+9、display:none;和visibility:hidden;区别是？
+display:none;  彻底消失
+visibility:hidden;  隐藏占位
+
+10、IE里面的滤镜透明怎么写？
+filter:alpha(opacity=40);
+
+11、z-index可以取负数吗？         margin可以取负数吗？        text-indent可以取负数吗？       padding可以取负数吗？ 
+可以     可以    可以   不可以
+
+12、如何实现高度自适应于当前窗口？
+html,body{ height:100%}
+
+13、精灵图技术的好处？
+减少向服务器的请求次数
+降低图片的大小
+
+14、height在IE6里解析为什么属性？
+min-hegiht
+
+15、相对定位的盒子可以使用z-index吗？
+可以
+
+16、请写出5个可以继承的css属性 
+color  font-size   font-family   font-weight   line-height   font-style   text-align  
+
+17、写出解决高度塌陷的三种方法
+固定高度
+父盒子overflow：hidden
+在浮动元素的下面添加一个空盒子{clear;both; height:0; line-height:0; font-size:0; overflow:hidden;}
+父盒子：：after{content:"";clear;both; height:0; line-height:0; font-size:0; overflow:hidden;visibility:hidden;display:block;}
+
+18、如何实现当    文本一行显示时，在盒子里水平居中；文本多行时，靠左侧对齐。
+.all{ text-align:center;}
+.all div{ text-align:left; display:inline-block;}
+

@@ -1,0 +1,89 @@
+ 1、CSS英文全称和汉译：
+cascading style sheets
+层叠样式表
+
+ 2、CSS样式表有几种？分别是？
+3
+内部  外部  内联（行间    行内   嵌入式）
+
+ 3、外部样式表的两种调用方式：
+<link   rel="stylesheet"  type="text/css"  href="" />
+<style>
+    @import url(路径);
+</style>
+
+ 4、CSS选择符的基本选择符有哪些：  调用时的写法分别是：
+类型      div{}
+id         #id{}
+class    .class{}
+
+ 5、写出超链接a的四种伪类选择符：
+a:link{}
+a:hover{}
+a:active{}
+a:visited{}
+
+ 6、写出HTML的语法：
+双标记：<标记  属性=“属性值”></标记>
+单标记：<标记  属性=“属性值”/>
+
+ 7、HTML注释和css注释分别是：
+<!--      -->
+/*           */
+
+ 8、请给P标签写一个内联样式表：
+<p style="width:200px; height:200px;"></p>
+
+ 9、插入图片的标签是：请写出标签和内部的几个属性
+<img  src=""  title=""  alt=""/>
+
+ 10、包含选择器的语法是：   群组选择器的语法是：
+选择符1    选择符2{}
+选择符1，选择符2{}
+
+ 11、调节选区的快捷键是
+alt---s----t
+
+ 12、自定义列表是：
+<dl>
+	<dt></dt>
+	<dd></dd>
+</dl>
+
+ 13、三种基本选择符的权重大小依次是：
+id  >   class  > div
+
+ 14、css的基本语法是
+选择符{属性：属性值；}
+
+ 15、在新窗口打开一个超链接需要添加哪个属性
+target="_blank"
+
+ 16、HTML的中英文全称分别是
+超文本标记语言
+hyper  text  markup  language
+
+ 17、单元格行合并和列合并分别是：
+rowspan   colspan
+
+ 18、请写出HTML5的基本结构
+<!doctype  html>
+<html>
+	<head>
+		<meta  charset="utf-8" />
+		<title></title>
+	</head>
+	<body></body>
+</html>
+
+ 19、表格里面水平对齐的属性是
+align
+
+ 20、实例化三属性是
+width  height   background
+
+
+
+
+
+

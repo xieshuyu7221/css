@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{ font-size:12px;}
+.all{ width:400px; height:460px; background:url(images/bg2.png); padding:20px; border:1px solid #ccc;}
+p{ text-align:right}
+.box{ border:0; border-top:1px solid #090;}
+.box fieldset{ border:0; border-top:1px solid #0C0;}
+.submit{ margin-left:200px}
+</style>
+</head>
+
+<body>
+<div class="all">
+	<form>
+    	<p>*所在项为必填项</p>
+        <fieldset class="box">
+        	<legend>个人信息</legend>
+            姓名* <input type="text" /><br><br>
+            地址* <input type="text" /><br><br>
+            出生* 
+            <select>
+            	<option>1</option>
+            	<option>1</option>
+            	<option>1</option>
+            </select>
+            <select>
+            	<option>jan</option>
+            	<option>1</option>
+            	<option>1</option>
+            </select>
+            <select>
+            	<option>1979</option>
+            	<option>1</option>
+            	<option>1</option>
+            </select><br><br>
+            性别* 
+            <select>
+            	<option>男</option>
+            	<option>男</option>
+            </select>
+            
+        </fieldset>
+        <fieldset class="box">
+        	<legend>其他信息</legend>
+            <fieldset>
+            	<legend>你喜欢这个表单吗?*</legend>
+                <input type="radio" name="like" />喜欢 
+                <input type="radio" name="like" />不喜欢 
+            </fieldset>
+            <fieldset>
+            	<legend>你喜欢什么运动?*</legend>
+                <label><input type="checkbox" name="yundong" />游泳 </label>
+                <label><input type="checkbox" name="yundong" />篮球 </label>
+                <label><input type="checkbox" name="yundong" />足球 </label>
+               <label> <input type="checkbox" name="yundong" />跑步 </label>
+            </fieldset>
+            <fieldset>
+            	<legend>请写下你的建议</legend>
+                <textarea style="width:300px; height:80px; resize:none;"></textarea>
+            </fieldset>
+        </fieldset>
+        <input type="submit" value="提交" class="submit" />
+    </form>
+</div>
+</body>
+</html>

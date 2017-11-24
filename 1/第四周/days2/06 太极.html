@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{
+	width:198px;
+	height:396px;
+	border:1px solid #000;
+	border-right:198px solid #000;
+	border-radius:50%;
+	position:relative;
+	transition:all 2s linear 0s;}
+div:hover{
+	transform:rotate(720deg);}
+div::before{
+	content:"";
+	position:absolute;
+	width:66px;
+	height:66px;
+	border:66px solid #fff;
+	background:#000;
+	border-radius:50%;
+	top:0;
+	left:99px;}
+div::after{
+	content:""; 
+	position:absolute;
+	width:66px;
+	height:66px;
+	border:66px solid #000;
+	background:#fff;
+	border-radius:50%;
+	bottom:0;
+	left:99px;}
+</style>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

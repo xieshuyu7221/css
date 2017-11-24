@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body,dl,dt,dd,input{ padding:0; margin:0;}
+body{ font-size:12px;}
+.all{ width:490px; padding:20px; border:1px solid #ccc; margin:50px auto;}
+fieldset{ border:1px solid #ccc;}
+legend{ border:1px solid #ccc; padding:5px 20px;}
+dl{ height:20px; margin-bottom:10px;}
+dt{ width:100px; height:20px; float:left; text-align:right;}
+dd{ width:350px; float:left; height:20px; margin-left:10px;}
+.checkbox input{ vertical-align:middle; height:20px; position:relative; top:1px; margin-right:3px;}
+.checkbox span{ display:inline-block; vertical-align:middle; height:20px; line-height:20px;}
+.submit input{ width:60px; height:20px; margin-right:20px;}
+legend,p{ color:#066; font-weight:bold;}
+</style>
+</head>
+
+<body>
+<div class="all">
+	<form name="" method="" action="">
+    	<h3>已注册用户登录</h3>
+        <fieldset>
+        	<legend>用户登录</legend>
+            <dl>
+            	<dt><label for="text">用户名</label></dt>
+                <dd><input type="text" id="text" /></dd>
+            </dl>
+            <dl>
+            	<dt>密码</dt>
+                <dd><input type="password" /></dd>
+            </dl>
+            <dl class="checkbox">
+            	<dt></dt>
+                <dd><input type="checkbox" /><span>记住我</span></dd>
+            </dl>
+            <dl class="submit">
+            	<dt></dt>
+                <dd><input type="submit" value="登录" /></dd>
+            </dl>
+            <p><a href="#">忘记密码？</a></p>
+            
+        </fieldset>
+        <h3>未注册创建账户</h3>
+        <fieldset>
+        	<legend>用户注册</legend>
+            <p>您的电子邮箱不会被公布出去，但是必须填写。在您注册之前认真阅读服务条款。</p>
+            <dl>
+            	<dt>用户名</dt>
+                <dd><input type="text" /> *(最多30个字符)</dd>
+            </dl>
+            <dl>
+            	<dt>电子邮箱</dt>
+                <dd><input type="password" /> *</dd>
+            </dl>
+            <dl>
+            	<dt>密码</dt>
+                <dd><input type="password" /> *(最多15个字符)</dd>
+            </dl>
+            <dl>
+            	<dt>重复密码</dt>
+                <dd><input type="text" /> *</dd>
+            </dl>
+            <dl class="checkbox">
+            	<dt>同意服务条款</dt>
+                <dd><label><input type="checkbox" />先看看条款</label></dd>
+            </dl>
+            <dl class="submit">
+            	<dt></dt>
+                <dd><input type="submit" value="登录" /><input type="reset" value="重置" /></dd>
+            </dl>
+            <p>*在提交您的注册信息时，我们人为您已经同意了我们的服务条款</p>
+            <p>*这些条款可能在未经您同意的时候进行修稿</p>
+            
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

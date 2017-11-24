@@ -1,0 +1,78 @@
+1、首行缩进
+text-indent
+
+2、盒模型组成
+margin  border  padding  content
+
+3、文本水平对齐
+text-align
+
+4、图片垂直居中
+img{ vertical-align:middle; display:inline-block}
+span{ vertical-align:middle; display:inline-block; width:0; height:100%;}
+
+5、文本修饰及取值
+text-decoration:none/underline/overline/line-through
+
+6、overflow的取值
+visible  hidden  scroll auto  inherit 
+
+7、border-style的取值
+solid    dashed   dotted   double 
+
+8、背景的子属性
+background-color/image/repeat/position/attachment
+
+9、字体字号行号的缩写
+font:12px/1.5  "微软雅黑"
+
+10、去除超链接下划线
+a{ text-decoration:none}
+
+11、版心的作用
+为了适应不同分辨率
+
+12、为什么清间距不用*
+
+13、img，input，table，li的默认display
+inline-block   inline-block   table-cell  list-item
+
+14、为什么img和input是内联元素还能设置宽高？
+置换元素   inline-block
+
+15、常用的一种引用外部样式的写法
+<link  rel="stylesheet"  type="text/css"   href="" />
+
+16、写出5个行内元素
+a  span   br   b  em   i   strong   img   input  
+
+17、display的取值共有多少？
+18个
+
+18、省略号的css写法
+div{ width:200px;  white-space:nowrap;  overflow;hidden;  text-overflow:ellipsis;}
+
+19、如何让一个不定宽的导航水平居中，只写css即可
+ul{ text-align:center;}
+li{ display:inline-block}
+
+20、浮动和inline-block的区别
+浮动: 脱标  不居中  不识别回车为空格
+inline-block:不脱标  支持居中  识别回车为空格
+
+21、写出五个不可继承的属性
+border  width   height  float   background   padding  margin 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

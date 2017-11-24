@@ -1,0 +1,353 @@
+一、表单
+表单的作用：用来收集用户的信息的;
+表单的组成：表单域, 表单控件, 提示信息
+1、表单域<form name="" method="" action="index.html"></form>
+name 表单域的名字
+action 提交信息的去向，目标地址的URL
+method 设置提交请求的方式，get或post，默认是get
+
+
+get和post区别：
+
+get：  url = baseURL + "?username=" + name + "&age=" + age;
+post： 仍然使用基本的URL，将参数信息放在请求实体中发送。
+1. get是从服务器上获取数据，post是向服务器传送数据。
+2. get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。 
+   post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML header内一起传送到action属性所指的URL地址,用户看不到这个过程。
+3. get传送的数据量较小，不能大于2KB。
+   post传送的数据量较大，一般被默认为不受限制。
+4. get安全性非常低，post安全性较高。
+   get执行效率比Post效率高。
+   get可分享链接，post不可复制链接进行分享；
+
+
+
+
+
+
+
+
+
+
+
+
+2、表单控件
+1）文本框
+<input type="text" value="默认值"/>
+2)密码框
+<input type="password" />
+<input type="password" placeholder="密码" />
+placeholder  占位符
+3）单选框/单选按钮
+<input type="radio" name="ral" />
+<input type="radio" name="ral" />
+<input type="radio" name="ral" checked="checked" />(默认选中)
+4）复选框/复选按钮
+<input type="checkbox" name="like" />
+<input type="checkbox" name="like" disabled="disabled" /> (禁用)
+当属性值与属性名相同时，属性值可以省略不写
+5)下拉列表
+<select name="">  
+              <optgroup    label="黑龙江">  
+                	<option value="haerbin">哈尔滨</option>  
+                	<option value="mudanjiang">牡丹江</option>  
+              </optgroup>  
+              <optgroup    label="北京">  
+                	<option value="3">昌平</option>  
+                	<option value="4">海淀</option>  
+              </optgroup>  
+</select> 
+
+下拉列表包含一个“项目组”(optgroup)，这个组是无法选择的，使用label属性标记组名，真正起作用的，还是value属性。
+下拉列表默认被选中selected
+
+6）多行文本框（文本域）
+<textarea name="textarea" cols="字符宽度" rows="行数"  style="resize:none;">
+</textarea>
+style="resize:none;"  不可拖拽
+
+7)重置按钮
+<input type="reset" value="按钮内容" />
+
+8)提交按钮
+<input type="submit" value="按钮内容" />
+
+9)普通按钮按钮
+<input   name=""  type="button"  value=“按钮内容” />
+
+（他和submit的区别是 ：
+submit  是提交按钮 起到提交信息的作用，
+reset   重置按钮，起到重置的作用，
+button  只起到跳转的作用，不进行提交,只是一个普通按钮。） 
+
+10）上传文件
+文件域：<input type="file"  multiple/>
+multiple  多选
+
+11）图片按钮
+<input type="image" src="" />
+具备提交的功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3、提示信息
+
+1)表单字段集
+<fieldset></fieldset>
+
+功能：相当于一个方框，在字段集中可以包含文本和其他元素。
+
+该元素用于对表单中的元素进行分组并在文档中区别标出文本。
+
+fieldset元素可以嵌套，在其内部可以在设置多个fieldset对象。 
+
+2)字段集标题
+
+<legend></legend>
+
+功能：legend元素可以在fieldset对象绘制的方框内插入一个标题。
+
+      legend元素必须是fieldset内的第一个元素。
+
+
+3)提示信息标签
+
+<label for="绑定控件id名"></label>
+功能：label元素起到了一个关联的作用(点击姓名，会触发输入框焦点)。
+要将label元素绑定到其他的控件上，可以将label元素的for属性设置为与该控件的id属性值相同。
+
+显式：
+<label for="czm">姓名:</label>
+<input type="text" name="name" id="czm" />
+第一个标记是以显式形式将文本 "姓名:" 和表单的文本输入控件联系起来，它的 for 属性的值和控件的 id 一样，都是 czm。
+
+隐式：
+<label>姓名: <input type="text" name="name" /></label>
+第二个标记 ("姓名:") 不需要 for 属性，它的相关控件也不需要 id 属性，它们是通过在 <label> 标签中放入 <input> 标签来隐式地连接起来的。
+
+
+
+
+
+二、数据表格高级
+
+1、表格的作用：显示数据;
+
+（一）关于表格的CSS属性
+
+1、单元格间距(该属性必须给table添加)
+
+border-spacing:50px;（同时写时border-spacing权限较大）
+
+与cellspacing的区别：
+
+区别在于border-spacing是CSS属性，cellspacing是table标签HTML属性
+
+2、合并相邻单元格边框（同时写时border-collapse权限大，也就是说一旦
+
+边框合并了，你写了border-spacing也是无效的）
+
+border-collapse:separate(边框分开)/collapse(边框合并)；
+
+collapse(边框合并)，可以使边框合并为一个像素；
+
+
+3、无内容单元格显示、隐藏
+
+empty-cells:show/hide;
+
+默认是显示show
+
+空格不识别，&nbsp;识别；
+
+
+
+4、表格布局算法  (  加快表格的加载速度  )  
+
+table-layout:auto/fixed(固定宽度，不会随内容多少改变单元格宽度)
+
+a 定义和用法
+table-Layout 属性用来显示表格单元格、行、列的算法规则。
+
+b 固定表格布局：
+固定表格布局与自动表格布局相比，允许浏览器更快地对表格进行布局。
+
+c 自动表格布局：
+在自动表格布局中，列的宽度是由列单元格中没有折行的最宽的内容设定的。
+此算法有时会较慢，这是由于它需要在确定最终的布局之前访问表格中所有的内容。
+
+
+
+
+
+
+
+（二）相关标签 
+
+1、表格标题
+
+<caption>标题内容</caption>  此标签写在table标签内，必须是标签内第一个标签
+
+caption:表格标题
+
+表格标题位置：caption-side:top/right/bottom/left   
+
+此属性写给table和caption哪个标签都可以
+
+说明：left,right位置只有火狐识别，top,bottom IE6以上版本支持，ie6以下版本不支持其它属性值，只识别top;
+
+
+2、表格布局元素
+
+表格基本组成
+
+table（表格）  tr（行）  td（列——单元格）
+
+th:表格列标题（放在tr里，相当于一个特殊的td,默认加粗居中等标题样式）
+
+html属性：
+
+1） colspan="value"    合并列
+2） rowspan="value"   和并行
+3） valign="top/bottom/middle" 垂直对齐方式   align=“left/center/right”
+4） rules="groups/rows/cols/all/none"    添加组分隔线
+
+说明：
+rows:位于行之间的线条
+cols:位于列之间的线条
+all:位于行和列之间的线条
+none:没有线条
+groups:位于行组和列组之间的线条（前提是你对该表格已经进行了分组）
+
+3、表格行分组
+<thead></thead>      表头    
+<tbody></tbody>      表体
+<tfoot></tfoot>      表尾
+
+默认表头表尾细小，表体宽大；
+
+只起到了一个分组的作用，不会对文本的样式造成影响
+
+写这些标签时，不用改动原有的tr和td
+
+4、表格列分组
+
+<colgroup span="value"></colgroup>
+
+该标签写在table内，不包含tr和td； 
+
+说明：
+
+1）colgroup元素会根据从左到右的顺序依次对数据表格进行分组,想分几组就写几个标签。
+2）span属性显示指定相邻几列组成一组，span属性值默认为1，默认时仅定义一列为一组。
+3）可以通过给table添加rules="groups"属性来给分组列添加组分割线，方可看得出。
+4）权重较弱，没办法覆盖前面已有的样式；color改变的是组分割线的颜色；
+
+
+
+
+
+
+
+
+
+
+三、 CSS文档统筹
+
+1）整站里相同的CSS样式提取到一个样式表里，各个页面调用相同的样式文件即可。
+
+2）网站较大的情况下一般会把网站的头部，尾部单独分离出来，包括样式文件。
+
+3）样式重置
+
+
+1、规则设置（也就是我们常说的默认样式）
+
+新浪：
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img { border:none; }
+img{display: block;}
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+ul, ol { list-style:none; } 
+body { color:#333; padding:5px 0; font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff;/* overflow-y:scroll;*/ overflow-x:hidden;}
+a{ color:#666; text-decoration:none; }
+a:visited { color:#666; }
+a:hover, a:active, a:focus { color:#ff8400; text-decoration:underline; }
+
+2、腾讯
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "宋体","Arial Narrow",HELVETICA;background:#fff;}
+a{color:#172c45;text-decoration:none} 
+a:hover{color:#cd0200;text-decoration:underline} 
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+.ind{text-indent:2em} 
+.ind10{text-indent:10px;}
+.noborder{border:0;}
+
+3、搜狐
+body{font-family:"\5B8B\4F53","Arial Narrow",HELVETICA;text-align:center;margin:0 auto;padding:0;background:#FFF;font-size:12px;color:#333;} 
+body > div{text-align:center;margin-right:auto;margin-left:auto;} 
+div,form,ul,ol,li,span,p{margin:0;padding:0;border:0;}
+img,a img{border:0;margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:12px;font-weight:normal;}
+ul,ol,li{list-style:none}
+table,td,input{font-size:12px;padding:0} /* 默认链接颜色 */ 
+a{outline-style:none;color:#333;text-decoration:none}
+a:hover{color:#c00;text-decoration:underline;}
+
+
+
+
+
+
+四、BFC概念
+
+BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”。
+
+BFC元素特性表现原则就是，内部子元素再怎么翻江倒海，翻云覆雨都不会影响外部的元素。
+
+
+以下几种情况会触发BFC：
+
+float的值不为none。
+
+overflow的值为auto,scroll或hidden。
+
+display的值为table-cell, table-caption, inline-block中的任何一个。
+
+position的值不为relative和static；absolute 和 fixed可以。
+
+
+补充：
+table-caption:   CSS2将对象作为表格标题显示 
+table-cell:      CSS2将对象作为表格单元格显示 
+
+
+
+
+
+
+
+
+
+
+
+

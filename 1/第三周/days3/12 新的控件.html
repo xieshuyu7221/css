@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<form name="" method="" action="">
+	姓名：<input type="text" ><br><br>
+	电话：<input type="tel" ><br><br>
+	邮箱：<input type="email" multiple ><br><br>
+	网址：<input type="url" ><br><br>
+	年龄：<input type="number"  min="18" max="100" step="5"><br><br>
+	体重：<input type="range" min="45" max="100" step="2" value="2" id="range" onchange="text.value = range.value">
+    <input type="text" id="text"><br><br>
+data<input type="date"><br><br>
+month<input type="month"><br><br>
+week<input type="week"><br><br>
+time<input type="time"><br><br>
+datetime-local<input type="datetime-local"><br><br>
+
+颜色：<input type="color"><br><br>
+搜索：<input type="search"><br><br>
+    <input type="submit" value="登录" />
+    
+    <p>浏览器版本：<input list="words"></p>
+    <datalist id="words">
+      <option>浏览器</option>
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+      <option value="Sogou">
+      <option value="Maxthon">
+    </datalist>
+    
+    
+</form>
+
+
+<form oninput="out.value = parseInt(txt1.value) * parseInt(txt2.value)">
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<output name="out"></output>
+</form>
+
+</body>
+</html>

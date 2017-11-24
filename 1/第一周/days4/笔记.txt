@@ -1,0 +1,213 @@
+一、表单
+
+
+12） 表单
+
+表单的作用：用来收集用户的信息的;
+
+1、表单框
+<form >  </form>
+
+1）文本框
+<input type="text" value="默认值"/>
+2)密码框
+<input type="password" />
+<input type="password" />
+
+3)提交按钮
+<input type="submit" value="按钮内容" />
+5）单选框/单选按钮
+<input type="radio" name="ral" />
+<input type="radio" name="ral" />
+<input type="radio" name="ral" />
+
+6）复选框/复选按钮
+<input type="checkbox" name="like" />
+<input type="checkbox" name="like" /> 
+当属性值与属性名相同时，属性值可以省略不写
+
+4)重置按钮
+<input type="reset" value="按钮内容" />
+
+
+
+7、背景图的固定
+
+主要用于body
+
+语法：选择符{background-attachment:scroll(滚动，相对页面)/fixed(固定，相对窗口);}
+
+
+
+
+
+切图步骤：
+
+M选取工具选中需要切图的部分  
+
+Ctrl+C(复制)  
+
+CTRL+N（新建，如果一像素的，手动改完在确定） 
+
+ENTER (回车确定)
+
+CTRL+V（粘贴）  
+
+CTRL+SHIRT+ALT+S（保存）
+
+
+
+
+
+
+
+6、网页上常用的图片格式（压缩图片）
+ 
+
+1) jpg:有损压缩格式，靠损失图片本身的质量来减小图片的体积，适用于颜色丰富的图像;(像素点组成的，像素点越多会越清晰 )
+2）gif：有损压缩格式，靠损失图片的色彩数量来减小图片的体积，支持透明，支持动画，适用于颜色数量较少的图像;
+3) png:有损压缩格式，损失图片的色彩数量来减小图片的体积，支持透明，不支持动画，是 fireworks 的 源文件格式，适用于颜色数量较少的图像;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8、浮动
+
+float : left / rigth /none;
+
+一直向左或向右，直到遇到父盒子边缘或者浮动盒子的边缘为止
+
+clear:both;清除浮动 （放在不想被浮动影响的盒子身上）
+
+
+
+
+
+
+
+
+
+
+
+盒模型
+
+一、 盒模型的概念和组成
+
+盒模型是css布局的基石，它规定了网页元素如何显示以及元素间相互关系。
+css定义所有的元素都可以拥有像盒子一样的外形和平面空间，即都包含：  外边距、边框、内边距、内容区，这就是盒模型。
+margin  border  padding  content(width  height)
+
+1） padding的使用方法
+
+内边距：padding,在设定页面中一个元素内容到元素的边缘(边框) 之间的距离。
+也称补白、填充。
+用法：
+1）用来调整内容在容器中的位置关系
+2）用来调整子元素在父元素中的位置关系。
+3）padding值是额外加在元素原有大小之上的，如想保证元素大小不变，需从元素宽或高上减掉后添加的padding值。（width height-----容积）
+4）支持背景
+
+属性值的4种方式：
+  四值法：上   右   下   左 {padding:10px   20px   30px    40px;}
+  三值法：上    右左    下  {padding:10px   20px   30px ;}
+  二值法：上下    右左      {padding:10px   20px  ;}
+  一值法：四个方向     padding:2px;/*定义元素四周填充为2px*/
+
+说明：可单独设置一方向填充（内边距），
+
+如：padding-top:10px; 
+       padding-right:10px;
+       padding-bottom:10px;
+       padding-left:10px;
+
+
+
+
+
+
+
+3） border的使用方法
+border:边框宽度 边框风格 边框颜色;
+例如：border:5px solid #f00
+
+边框：border,网页中很多修饰性线条都是由边框来实现的。
+边框宽度：border-width:
+边框颜色：border-color:
+边框样式：border-style:solid(实线)/dashed(虚线)dotted(点划线)/double(双线)
+可单独设置一方向边框，
+
+如：
+border-bottom:    边框宽度 边框风格 边框颜色;  底边框
+border-left:      边框宽度 边框风格 边框颜色;  左边框
+border-right:     边框宽度 边框风格 边框颜色;  右边框
+border-top:       边框宽度 边框风格 边框颜色;  上边框
+
+边框支持背景
+
+
+
+
+4） margin的使用方法
+  边界：margin,在元素外边的空白区域，被称为外边距。
+
+  属性值的4种方式： 
+  四个值：上 右 下 左
+  三个值：上 左右 下
+  二个值：上下 左右
+  一个值：四个方向 
+
+margin:0 auto;     /*定义元素上、下边界为0px，在浏览器中横向居中。
+
+说明：可单独设置单一方向边界，
+如：
+margin-top:10px;
+margin-right:10px;
+margin-bottom:10px;
+margin-left:10px;
+
+
+ 垂直相邻外边距合并问题：垂直、相邻 、外边距
+（不论父子关系还是兄弟关系，都会发生合并，合并后取大的）
+解决方案：子盒子添加浮动属性
+
+
+
+
+
+
+
+
+
+
+
+
+二、写页面的注意事项：
+
+任何线上案例都需要在书写css之前做3步准备工作；（作用：这3步准备工作可以让你在后期的代码当中省很多时间）
+
+1.清空默认的边距和列表样式；
+
+2.设置正文的全局样式----指的就是给body设置文字三属性；
+
+3.设置超链接的默认样式；
+
+总结：这是写任何网站都必须要设置的3步工作；
+
+ 
+
+
+
+
+
+
+ 

@@ -1,0 +1,64 @@
+1、如何定义文本的字体颜色？
+color
+
+2、请写出5个不可继承的属性？
+width  hegiht  margin  padding  border
+
+3、边框按功能分类，有哪几个子属性？
+border-width   border-style  border-color
+
+4、如何让图片在一个盒子里垂直居中？请写出具体css代码。
+img{verticla-align:middle;}
+span{verticla-align:middle; display:inline-block; width:0; height:100%;}
+
+5、请写出5个内联元素
+a  b  i  em  strong  span  img  input  br  
+
+6、块级元素有什么特点？
+能设置宽高
+独占一行
+
+7、书写省略号需要写哪些条属性？
+div{ width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+8、overflow有哪些取值？分别什么意思？
+hidden/scroll/auto/visible/inherit
+
+9、写出解决垂直外边距合并问题的方法?
+父盒子overflow:hidden;
+子盒子float：left；
+
+10、浮动的内联元素可以设置宽高吗？
+可以
+
+11、写出一个复选框
+<input  type="checkbox"/>
+
+12、写出所有你知道的置换元素
+img   input
+
+13、背景的几个子属性分别是？
+background-color/image/position/repeat/attachment
+
+14、li默认得display是什么？
+list-item
+
+15、请让一个盒子在窗口中垂直水平都居中
+div{width:200px; height:200px; background;#f60; position:fixed; top:50%; left:50%; margin-top:-100px; margin-left:-100px;}
+
+16、input的默认display是什么？
+inline-block
+
+17、定位position的几个取值分别是？
+fixed/relative/absolute/static
+
+18、给div添加一个背景图，让其在容器中垂直居中水平平铺？
+div{background:url() repeat-x  left/0/center ;}
+
+19、背景固定是哪个属性？它有哪些属性值？
+background-attachment:fixed/scroll;
+
+20、绝对定位的三个特点分别是？
+子绝父相
+脱标不占位
+不写坐标，脱标留原位

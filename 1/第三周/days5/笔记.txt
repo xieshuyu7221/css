@@ -1,0 +1,347 @@
+一、颜色模式  IE9+
+
+rgb(255,255,255);
+rgba(255,255,255,.5);
+
+拓展：
+hsl(60,50%,100%)
+hsla(60,50%,100%,.6)
+
+h色调 hue
+	0（-360,360）表示红色，
+	60 黄色，
+	120 绿色，
+	180 青色，
+	240 蓝色，
+	300 洋红，	
+	大于360取360余数。
+s饱和度 saturability
+	百分数，0表示灰度，100%表示颜色最鲜艳
+l亮度 luminance
+	百分数，0最暗，100%最亮(白色)
+
+
+
+
+二、文本
+
+text-shadow曾在css2中出现过，因为浏览器碍于耗费大量资源还迟迟不能支持，所以在css2.1中被抛弃了，在css3中得到了大量浏览器支持，所以又回来了。
+
+text-shadow文本阴影：x-offset（水平偏移） 
+   IE9+                          y-offset（垂直偏移） 
+   		     blur-radius（阴影模糊半径）
+		     color（阴影颜色）
+
+text-overflow文本溢出： 
+	clip      裁切
+	ellipsis  省略号
+width:; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+
+文本换行：
+word-wrap属性 IE6+
+	normal  默认值，只在连字符或空格的地方换行
+	break-word  边界内换行，长单词(超过盒子宽度)折断换行
+
+word-break属性  IE6+
+	normal  默认值，中文边界换行，英文单词换行    
+	break-all  折断英文单词，达到词内换行的效果   
+	keep-all   不允许字断开，中文遇到标点换行，英文单词整个换行
+
+white-space属性（回车空格如果不认就会识别为一个空格）
+	normal     默认值，不识别回车空格，换行
+	pre        识别回车空格，不换行
+	nowrap     不识别回车空格，不换行
+	pre-wrap   识别回车空格，换行
+	pre-line   识别回车不识别空格，换行	
+	inherit     继承父元素的属性值
+
+
+
+
+
+
+三、web字体 @font-face
+
+好处：
+1、灵活性：轻松地改变图标的颜色和其他css效果；
+2、可扩展：改变图标大小想改变字体大小一样容易；
+3、矢量性：图标是矢量的，与像素无关，缩放图标不会影响清晰度；
+4、兼容性：字体图标支持所有现代浏览器（包括糟糕的IE6）；
+5、本地应用：通过添加制定字体到您的本地系统，您可以在各种不同的设计和编辑应用程序中使用它们。
+
+
+字体文件格式：
+1、EOT（Embedded OpenType Fonts）
+   它微软开发的用于嵌入网页中的字体，IE专用字体；
+2、WOFF（The Web Open Font Format）
+   Web字体中最佳格式，它是一个开放的TrueType/OpenType的压缩版本。2009年被开放，如今被W3C组织推荐标准；
+3、TTF（TrueType Fonts）
+   1980年，由Microsoft和Apple联合开发的一套字体标准，是Mac OS和WIN操作系统中最常见的一种字体；
+4、SVG（SVG Fonts）
+   用于SVG字体渲染的一种格式，它是由W3C制定的开放标准的图形格式。
+
+
+
+
+使用图标字体基本步骤：
+
+1、下载需要的图标字体
+2、引用相关字体
+3、声明字体
+4、对图标盒子使用该字体
+5、添加对应图标的编码
+
+
+
+
+
+
+
+
+
+
+拓展：
+自制图标字体：
+1、通过AI软件绘制图标；
+2、导出SVG文件
+3、打开https://icomoon.io/app
+4、点击Import icons按钮，在本地选择你的SVG文件
+5、在icomoon中调整字体位置、大小或旋转，点击save copy保存；
+6、点击font按钮生成字体；
+7、下载字体文件，使用同其他字体图标一样。
+
+
+
+
+
+四、css3盒模型
+
+css3增加了盒模型属性box-sizing，能够事先定义盒模型的尺寸解析方式。
+box-sizing：content-box   border-box     inherit
+
+content-box  
+     元素的宽 = width + padding + border
+
+border-box
+     元素的宽 = width（包含padding和border）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+五、伸缩布局盒模型
+  
+css3引入一种新的布局模式——flexbox布局，即伸缩布局盒模型，用来提供一个更有效的方式制定、调整和分布一个容器里的项目布局，即使他们的大小是未知或者动态的。
+
+只要思想是让容器有能力让其子项目能够改变其宽度、高度（甚至顺序），以最佳的方式填充可用空间（主要是为了适应所有类型的显示设备和屏幕大小）。flex容器会使子项目扩展来填充可用空间，或缩小他们以防止溢出容器。
+最重要的是，flex布局反向不可预知。
+
+flexbox布局功能主要具有以下几点：
+1、屏幕和浏览器窗口大小发生变化也可以灵活调整布局；
+2、指定伸缩项目沿着主轴或侧轴按比例分配额外空间，从而调增伸缩项目的大小；
+3、指定伸缩项目沿着主轴或侧轴将伸缩容器额外空间，分配到伸缩项目之前、之后或之间；
+4、指定如何将垂直于元素布局轴的额外空间分布到该元素的周围；
+5、控制元素在页面上的布局方向；
+6、按照不同于标准流所指定的排序方式对屏幕上的元素重新排序。
+
+
+
+
+flexbox模型中的专业术语：
+
+1、主轴和侧轴
+2、主/侧轴、侧/侧轴方向
+3、主/侧轴起点、主/侧轴终点
+4、主/侧轴长度
+5、伸缩容器和伸缩项目
+
+
+
+弹性和模型的使用：
+
+声明伸缩容器（父元素）：display：flex；需要加前缀
+display：-webkit-flex；
+display：-moz-flex；
+display：-ms-flex；
+display：-o-flex；
+display：flex；
+
+
+伸缩项目（子元素）
+-webkit-flex:1;
+-moz-flex:1;
+-ms-flex:1;
+-o-flex:1;
+flex:1;
+
+
+
+伸缩容器属性：
+
+1、伸缩流方向 flex-direction 主要用来创建主轴，定义伸缩项目在伸缩容器中的方向
+	row：从左向右
+	row-reverse：与row相反；
+	column：从上到下
+	column-reverse：与column相反；
+
+2、伸缩换行 flex-wrap：
+	nowrap 不换行（如果不换行那么指定宽度无效默认一比一状态排列）  
+	wrap 换行（仅对指定宽高超过伸缩容器时生效，不指定那么不会换行）
+	wrap-reverse 换行反向（如果是竖向排列那么会左右反向，如果是横向排列那么会上下反向）；  
+
+3、伸缩    流方向与换行 flex-flow 是前两者flex-direction和flex-wrap的缩写 flex-flow：flex-direction || flex-wrap
+  	 两个值同时定义或者单独定义都生效，顺序可以颠倒；
+
+4、主轴对齐 justify-content 主要用来定义伸缩项目沿主轴线的对齐方式；
+	flex-start：伸缩项目向一行的起始位置靠齐；
+	flex-end：伸缩项目向一行的结束位置靠齐；
+	center：伸缩项目向一行的中间位置靠齐；
+	space-between：伸缩项目会平均的分布在行里；
+	space-around：伸缩项目会平均的分布在行里，两端保留一半的空间；
+5、侧轴对齐 align-items 伸缩项目行在侧轴上的对齐方式
+	flex-start：伸缩项目在侧轴起点边的外边距 紧靠住 该行在侧轴起始边；
+	flex-end：伸缩项目在侧轴终点边的外边距 紧靠住 该行在侧轴终点边；
+	center：伸缩项目的外边距盒 在该行的侧轴上居中放置；
+	baseline：伸缩项目根据伸缩项目的基线对齐；
+	stretch：伸缩项目拉伸填充整个伸缩容器。
+6、align-self：主要用来设置单独伸缩项目在侧轴的对齐方式，可以覆盖align-items。
+7、堆栈伸缩行 align-content 定义多个伸缩行的对齐方式；
+	flex-start：各行向伸缩容器的起点位置堆叠；
+	flex-end：各行向伸缩容器的结束位置堆叠；
+	center：各行向伸缩容器的中间位置堆叠；
+	space-between：各行在伸缩容器中平均分布；
+	space-around：各行在伸缩容器中平均分布，两端保留一半的空间；
+	stretch：各行将伸展以占用额外空间。
+
+伸缩项目属性：
+
+1、显示顺序 order 默认状态是按照标准流的顺序排列，在flexbox模型里，可以通过order改变伸缩项目的顺序。
+	order：1； 排第一（但是在所有没标号的后面）
+	order：2； 排第二
+
+
+关于居中：
+盒子垂直水平都居中：父盒子display：flex； 子盒子 margin：auto；有具体宽高；
+单行居中，多行靠左：父盒子display：flex； 子盒子 margin：0  auto；不设宽度；
+
+
+
+
+
+
+
+六、多列布局
+
+
+css3多列布局可以自动将内容按指定的列数排列，这种特性实现的效果和报纸、杂志类排版非常相似。
+
+
+核心属性：
+
+columns：column-width 列宽   column-count 列数
+column-width：定义每列列宽； 类似于最小宽度min-width； auto 自适应；
+column-count：定义分列列数；auto自适应（由列宽、容器宽和列间距决定），也可固定
+column-gap：定义列间距； 不能为负数；
+column-rule：定义列边框；与定义边框一样：2px dashed #ccc;
+column-span：定义多列布局中子元素的跨列效果；通常用于标题；
+           none：不跨列；
+	all：跨所有列
+
+
+
+
+
+
+
+
+七、媒体查询
+
+
+许多智能手机都使用了一个比实际屏幕尺寸大很多的虚拟可视区域，主要目的就是让页面在智能手机端阅读时不会因为实际可视区域变形。所以你看到的页面还是普通样式，即一个全局缩小后的页面。为了让智能手机能根据媒体查询匹配对应样式，让页面在智能手机中正常显示，特意添加了一个meta标签。这个标签的主要作用就是让智能手机浏览页面时能进行优化，并且可以自定义界面可视区域的尺寸和缩放级别。
+
+
+如何识别手机尺寸通过设置meta语句：
+
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+width                   可视区域的宽度；
+height                  可视区域的高度；
+device-width		设备屏幕分辨率的宽度值
+initial-scale  		页面首次被显示时的缩放级别（0-10.0），取值为1时页面按实际尺寸显示，无任何缩放
+minimum-scale 		设定最小缩小比例（0-10.0），取值为1时将禁止用户缩小至实际尺寸之下
+maximum-scale 		设定最大放大比例（0-10.0），取值为1时将禁止用户放大至实际尺寸之上
+user-scalable 		设定用户是否可以缩放（yes/no）
+
+可以写成：
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+
+
+
+常见设备类型(media type):
+all		所有设备
+screen 		电脑显示器
+print		打印用纸或打印预览视图
+handheld	便携设备
+tv		电视机类型的设备
+speech		语意和音频盒成器
+braille		盲人用点字法触觉回馈设备
+embossed	盲文打印机
+projection	各种投影设备
+tty		使用固定密度字母栅格的媒介，比如电传打字机和终端
+
+
+
+
+
+媒体类型引用方法：
+
+1、link方式
+<link rel="stylesheet" href="css/wide.css" media="screen and (min-width:641px)" />
+
+<link rel="stylesheet" href="css/mobile.css" media="screen and (min-width:320px) and (max-width:640px)" />
+
+
+2、@import方式
+<style>
+@import url(style.css) screen and (min-width:641px);
+</style>
+
+<style>
+@import url(style.css) print   /*print:打印预览视图*/
+</style>
+
+
+
+3、@media方式
+1）在样式文件中引用媒体类型：
+@media all and (min-width:600px) and (max-width:800px) {
+	h1 {
+		background: red;
+	}
+}
+2）写在内部样式中
+<head>
+<style type="text/css">	
+	@media only screen and (min-width:600px) and (max-width:800px) {
+		h1 {
+			background: red;
+		}
+	}
+	/*设备横向放置是*/
+	@media (orientation: landscape) {
+		h1 {
+			background: yellow;
+		}
+	}
+</style>
+</head>

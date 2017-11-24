@@ -1,0 +1,75 @@
+1、五大浏览器内核分别是
+Trident  Gecko  Webkit  Presto  Blink  
+
+2、数据表格中边框合并是
+border-collapse
+
+3、数据表格中行分组都有哪些
+thead  tbody   tfoot
+
+4、数据表格中组分割线是
+rules
+
+5、HTML5新增了哪些语义化标签(至少写出10个)
+header  footer  nav  section  main  aside  article  video  audio  figure  
+figcaption  mark   details  summary   dialog   source   hgroup  canvas
+
+6、get和post的区别是
+get: 不安全  可分享  获取数据   小于2KB  高效   
+post：安全  不可分享  传送   无限大
+
+7、高度塌陷是？写出三种解决方案
+height
+overflow
+clear:both; height:0; line-height:0; font-size:0; overflow:hidden;
+.all::after{content:"";  display:block;  visibility:hidden; clear:both; height:0;line-height:0; font-size:0; overflow:hidden;}
+
+8、阻止表单进行自动验证是哪个属性
+novalidate
+
+9、如何实现图片垂直居中
+img{ vertical-align:middle;}
+span{vertical-align:middle; display:inline-block; heihgt:100%; width:0;}
+
+10、如何实现省略号的书写
+div{ width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+11、如何实现一个盒子在窗口中垂直水平都居中（请写出两种方法）
+div{position:fixed; top:0; left:0; right:0; bottom:0; margin:auto;}
+div{position:fixed; top:50%; left:50%; margin-left:-100px; margin-top:-100px;}
+
+12、IE6和IE7的过滤器分别是
+_  -      *
+
+13、什么情况下会发生双倍边距，解决方案是
+浮动于margin同向
+_display:inline;
+
+14、如何解决IE6中默认高度的问题
+overflow:hidden;
+font-size:0; line-height:0;
+
+15、如何实现宽度因内容多少的自适应
+float
+display:inline-block
+position:absolute/fixed;
+
+16、无内容单元格隐藏是
+empty-cells:hide;
+
+17、智能表单必填项是
+required
+
+18、邮件表单控件多项选择是哪个属性
+multiple
+
+19、智能表单正则验证是哪个属性
+pattern
+
+20、语义化标签的好处
+
+21、哪些声明能够触发BFC
+float:left/right
+display:inline-block/table-cell/table-caption
+position:absolute/fixed;
+

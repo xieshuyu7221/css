@@ -1,0 +1,128 @@
+
+
+一、3D变形：
+
+一）浏览器支持情况：
+Internet Explorer 10 和 Firefox 支持 3D 变形。
+Chrome 和 Safari 需要前缀 -webkit-。
+Opera 仍然不支持 3D 变形（它只支持 2D 变形）。
+
+
+二）变形类型：transform-style:preserve-3d
+
+实现一些3D效果的时候，transform-style: preserve-3d是少不了的。
+一般而言，该声明应用在3D变换的兄弟元素们的父元素上。
+
+preserve-3d 放到父元素
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+-ms-transform-style: preserve-3d;
+-o-transform-style: preserve-3d;
+transform-style: preserve-3d;
+
+
+三）perspective：透视，视角，景深
+
+写到父元素（舞台）
+-webkit-perspective: 1200px;
+-moz-perspective: 1200px;
+-ms-perspective: 1200px;
+perspective: 1200px;
+
+
+四）3D变形
+
+3D位移
+transform: translate3d(30px,30px,800px)
+transform:translateZ(800px) translateX(30px) translateY(30px);
+transform:translateZ(800px) translate(30px,30px);
+
+
+3D旋转
+transform：rotate3d（x,y,z,a）; 
+ 
+transform：rotate3d（1,0,0,45deg）;
+transform：rotateX（45deg）;
+
+transform：rotate3d（0,1,0,45deg）;
+transform：rotateY（45deg）;
+
+transform：rotate3d（0,0,1,45deg）;
+transform：rotateZ（45deg）;
+
+
+
+
+3D缩放
+scale3d 不能自己单独使用，需要配合其他变形一起使用才会有效果。
+transform：scaleZ（5） rotateX（45deg）; ——是轴在缩放
+transform：scale3d（1,1,5） rotateX（45deg）;
+
+
+
+ 五）、隐藏背面
+ backface-visibility: hidden;
+
+
+
+
+
+
+二、动画
+
+
+相关动画属性：
+
+animation：动画名称  动画所需时间  动画播放方式  动画开始时间  循环次数  播放方向  播放状态   动画时间外属性
+
+
+animation-name:动画名称-----声明的动画名称
+animation-duration:动画所需时间---完成0%-100%动画所需时间
+animation-timing-function:动画播放方式 ----同过渡 
+	                  step-start 马上跳到动画每一结束桢的状态
+animation-delay:等待动画的时间
+animation-iteration-count:循环次数----默认为1，infinite循环播放
+animation-direction:播放方向----默认normal，向前播放；alternate，播放次数为偶数则向前播放，为奇数时向反方向播放；
+animation-play-state:播放状态-----running播放和pause暂停
+animation-fill-mode:动画时间外属性----forwards动画结束后保持最后状态；backforwards会向元素应用动画样式时迅速应用动画初始值。
+
+
+
+
+
+
+
+关键帧声明动画@keyframes:
+@keyframes name{
+	from{
+		css样式；
+	}
+	percentage{
+		css样式；
+	}
+	to{
+		css样式；
+	}
+}
+
+@keyframes name{
+	0%{
+		css样式；
+	}
+	percentage{
+		css样式；
+	}
+	100%{
+		css样式；
+	}
+}
+
+
+调用@keyframes声明的动画：
+
+animation:run 1s infinite alternate forwards;
+
+
+
+
+

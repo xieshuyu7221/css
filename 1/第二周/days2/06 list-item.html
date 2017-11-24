@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+/*可继承 :文本相关，列表相关；不可继承：border  width  height  background  padding  margin  float  display */
+
+
+/*不可继承*/
+body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,a,img,input{ padding:0; margin:0;}
+
+/*继承*/
+body{ font-size:12px; color:#3e3e3e; font-family:"微软雅黑"}
+
+.all{ padding-left:20px;list-style-type:disc;}
+.all div{ display:list-item; }
+
+/*
+li-----list-item   块级元素
+img,input----inline-block   内联元素
+table-----table-cell单元格类型   块级元素
+div---block     块级元素
+span---inline    内联元素
+*/
+
+</style>
+</head>
+
+<body>
+	<ul>
+    	<li> 瓜子</li>
+    	<li> 瓜子</li>
+    	<li> 瓜子</li>
+    	<li> 瓜子</li>
+    	<li> 瓜子</li>
+    </ul>
+    <div class="all">
+    	<div>花生</div>
+    	<div>花生</div>
+    	<div>花生</div>
+    	<div>花生</div>
+    	<div>花生</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+1、文本加粗的css属性是？
+font-weight:bold;
+
+2、盒模型的组成
+margin  border  padding  content(width  height)
+
+3、按功能分border的子属性
+ border-width    border-style     border-color
+
+4、超链接的四个伪类分别是？
+a:link
+a:hover
+a:active
+a:visited
+
+5、定义文本颜色的属性是
+color
+
+6、书写出五个空标记
+<img/><hr/><br/><link/><meta/><input/>
+
+7、如何实现单行文本垂直居中
+line-height  ===  height
+
+8、文本大小、文本行高和文本字体可以简写为
+font:12px/2 "微软雅黑";
+
+9、背景的子属性
+background-color
+background-image
+background-repeat
+background-position
+background-attachment
+
+10、background-repeat的取值有哪些？
+no-repeat   repeat  repeat-x   repeat-y 
+
+11、盒模型中不支持背景的是哪一部分？
+margin
+
+12、文本水平对齐方式是
+text-align
+
+13、html和css英文全称    
+hyper text markup language
+cascading  style sheets
+
+14、包含选择符和指定选择符的语法（可举例说明）
+#header   div{}
+div.box{}
+
+15、清除列表样式
+list-style:none;
+
+16、实例化三属性是
+width  height  background
+
+17、border-style的取值有哪些
+solid  dashed  dotted  double
+
+18、文本修饰是？它的取值有哪些？
+text-decoration:none/underline/overline/line-through
+
+19、垂直对齐方式是哪个属性？
+vertical-align:middle;
+
+20、书写页面的前三步准备工作是？（可具体写出）
+	一、清样式清间距
+	二、定义全局样式
+	三、超链接

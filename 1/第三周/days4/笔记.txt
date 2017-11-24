@@ -1,0 +1,314 @@
+一、认识css3
+css3并不是一门新的语言，他是css规范的最新版本，在css2.1的基础上增加了很多强大的新的功能，以帮助开发人员解决一些问题。
+使用css3的好处：
+最明显的就是css3能让页面看起来非常炫、非常酷，使网站设计锦上添花，但它的好处远远不止这些。
+大多数情况下，不仅有利于开发维护，还能提高网站的性能。
+与此同时，还能增加网站的可访问性、可用性，使网站能适配更多设备，
+甚至还可以优化网站的SEO，提高网站的搜索排名。
+
+渐进增强和优雅降级
+1、渐进增强
+不是一种技术，是一种开发方式，更是一种设计理念。
+针对的版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+2、优雅降级
+一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+
+二、选择器（基本，层级，伪类，伪元素，属性）
+
+一）基本选择器
+
+通配选择符，元素选择符，id选择符，类选择符，包含选择符，群组选择符
+
+
+二）层级选择符
+
+1、后代选择器（E  F）              包含选择器
+2、子代选择器（E > F）           其中E为父元素，F为子元素，一定是父子关系        IE7+
+3、相邻兄弟选择器（E+F）      E和F是兄弟是同辈，F在E的后面，并且相邻       IE7+
+4、通用选择器（E~F）             E元素后面的所有兄弟F      IE7+
+
+三）伪类选择符
+
+1、动态伪类
+   E:link       当前状态
+   E:visited  访问过
+   E:focus   获取焦点（按tab键可获取焦点） IE8+
+   E:hover   鼠标移上
+   E:active   鼠标按下   IE8+
+
+2、目标伪类
+   E:target  IE9+
+   目标伪类选择器是动态伪类，只有存在URL指向该匹配元素时，样式效果才会生效。
+
+3、语言伪类
+   E:lang   IE8+
+   quotes 属性设置嵌套引用（embedded quotation）的引号类型。
+   Lang取值：zh    en     fr     
+   参考网址
+   http://www.w3school.com.cn/tags/html_ref_language_codes.asp
+   例：
+   <html>
+   <head>
+   <style type="text/css">
+   :lang(en)
+      {
+      quotes: "~" "~" 
+   }
+   </style>
+   </head>
+   <body>
+   <p>文字<q lang=“en">段落中的引用的文字</q>文字</p>
+   </body>
+   </html>
+
+
+
+4、UI元素状态伪类   IE9+ 
+
+   E:enabled       启用 
+	除了禁用的就是启用的
+   E:disabled      禁用 
+	<input type="text" disabled> 禁用表单
+   E:read-only     只读 
+	<input type="text" readonly> 只读表单
+   E:read-write    非只读 
+	除了只读的就是非只读的
+   E:checked       选中 
+	<input type="checkbox" checked> 选中表单
+	复选框不能改变背景色，可以改变外轮廓
+	outline:2px solid #ccc;   
+
+5、结构伪类      IE9+ 
+
+   E:first-child     作为父元素的第一个子元素的元素E
+   E:last-child     作为父元素的最后一个子元素的元素E
+   E:root     选择匹配元素E所在文档的根元素（多只html）
+   E   F:nth-child(n)    选择父元素E的第n个子元素F
+   E   F:nth-last-child(n)    选择元素E的倒数第n个元素F
+   E:nth-of-type(n)    选择父元素内具有指定类型的第n个E元素
+   E:nth-last-of-type(n)   选择父元素内具有指定类型的倒数第n个E元素
+   E:first-of-type     选择父元素内具有指定类型的第1个E元素
+   E:last-of-type     选择父元素内具有指定类型的最后一个E元素
+   E:only-child     选择父元素内只包含一个子元素，且匹配为E元素
+   E:only-of-type      选择父元素只包含一个同类型的子元素，且匹配为E元素
+   E:empty    选择没有子元素的元素，而且该元素也不包含任何文本节点
+注：
+img:nth-of-type(odd)  所有有图片里面第奇数个图片
+img:nth-of-type(even) 所有有图片里面第偶数个图片
+
+
+6、否定伪类  IE9+ 
+
+   E:not(F)    匹配所有除元素F外的E元素，不写E就是除F外的所有元素
+
+   例如：
+   ：not(footer){   }    页面中除了footer外的所有元素
+   input：not([type=submit]){    }   除submit按钮外的所有input标签
+
+
+四）伪元素
+
+   伪元素其实在css中一直存在，大家平时看到的有“:first-line”“:first-letter”“:before”“:after”，css3中对伪元素做了一定的调整，在以前的基础上加了一个冒号，为了区别伪类。
+
+   ::first-letter
+   ::first-line
+   ::before
+   ::after
+   ::selection   仅接受两个属性，一个background，一个color
+
+五）属性（attribute）选择器  IE7+ 
+
+   在html中，通过各种各样的属性可以给元素增加很多附加的信息。
+   Css中引入了一些属性选择器，这些选择器可基于元素的属性来匹配元素。
+
+   E[attr]      定义了attr属性的E元素。E可省略，表示定义了attr属性的任意元素
+   E[attr =val] 定义了attr属性，并且属性值为val的E元素。
+   E[attr|=val] 定义了attr属性，并且属性值是val或者以val-开头的E元素。
+   E[attr~=val] 定义了attr属性，并且属性值具有多个空格分隔的值，其中一个为val的E元素
+   E[attr*=val] 定义了attr属性，并且属性值任意位置包含val的E元素。
+   E[attr^=val] 定义了attr属性,并且属性值是以val开头的E元素。
+   E[attr$=val] 定义了attr属性，并且属性值是以val结束的E元素。
+
+
+
+
+
+
+
+三、边框（边框颜色，圆角，图片，盒子阴影）
+
+一）css3边框颜色属性
+
+
+如果只设置一种颜色，效果和css2中的border-color一样，只有设置了N个颜色，就可以使用css3的border-color属性设置n个颜色，每种颜色占1像素，如果宽度大于颜色的数量值，最后一种颜色显示剩余的宽度。
+
+浏览器简兼容性：
+目前只有firefox 3.0以上的版本支持，而且还不是标准写法（需要书写前缀-moz-）。
+
+-moz-border-top-colors:#ff0 #0f0 #0ff #f0f;
+-moz-border-right-colors:#ff0 #0f0 #0ff #f0f;
+-moz-border-bottom-colors:#ff0 #0f0 #0ff #f0f;
+-moz-border-left-colors:#ff0 #0f0 #0ff #f0f;
+
+关于浏览器前缀：
+
+现在的规范还不是最终版本，在执行中有一些漏洞，因此执行这些功能时，使用供应商的前缀提供数值，并且使用无前缀声明来提供每个属性的永久版本，当规范成为最终版本且经过完善后，浏览器前缀将会被取消。
+
+firefox(gecko)       -moz-
+chrome(webkit)    -webkit-
+IE(trident)             -ms-
+opera(presto)       -o-
+
+
+
+二）圆角边框
+
+border-radius
+border-radius：20px;      
+               四个角的圆角是一样的
+border-radius：20px 30px;      
+               top-left和bottom-right相等并取第一个值；
+               top-right和bottom-left相等并取第二个值；
+border-radius：20px 30px 40px;
+	       第一个值取top-left，
+               第二个值top-right和bottom-left，
+               第三个值bottom-right						
+border-radius：20px 20px 30px 40px;
+	       第一个值取top-left，
+               第二个值top-right，
+               第三个值bottom-right，
+               第四个值bottom-left 
+
+默认值none，表示元素没有圆角；
+如果要重置元素没有圆角，取值none并无效果，需要设置为0；
+
+由于各浏览器厂商对border-radius的子属性解析不一样，造成了各浏览器下的派生子属性写法有所区别。
+
+1)gecko内核
+-moz-border-radius-topleft  左上角
+-moz-border-radius-topright  右上角
+-moz-border-radius-bottomright  右下角
+-moz-border-radius-bottomleft  左下角
+2）webkit内核
+-webkit-border-top-left-radius  左上角
+-webkit-border-top-right-radius  右上角
+-webkit-border-bottom-right-radius  右下角
+-webkit-border-bottom-left-radius  左下角
+3）presto和trident内核
+border-top-left-radius  左上角
+border-top-right-radius  右上角
+border-bottom-right-radius  右下角
+border-bottom-left-radius  左下角
+
+
+
+
+border-radius 的取值：
+border-radius:水平圆角半径/垂直圆角半径；
+只取一个值代表垂直水平相同；
+
+border-radius:60px 40px 30px 20px / 30px 20px 10px 5px;
+元素左上角是一个水平半径60px，垂直半径30px的不规则圆角；
+右上角是一个水平半径40px，垂直半径20px的不规则圆角；
+右下角是一个水平半径30px，垂直半径10px的不规则圆角；
+左下角是一个水平半径20px，垂直半径5px的不规则圆角；
+
+
+但分开设置元素各个顶角的圆角的水平和垂直半径圆角效果时，不需要“/”:
+border-top-left-radius:10px 50px;
+border-top-right-radius:20px 60px;
+
+加上反而是一种错误的写法：
+ border-top-left-radius:10px / 50px;
+ border-top-right-radius:20px / 60px;
+
+
+
+单个圆角：
+border-radius:50px 0 0 0;
+效果等同于：
+-moz-border-radius-topleft:50px;
+-webkit-border-top-left-radius:50px;
+border-top-left-radius:50px;
+
+
+
+特殊应用：
+1）border-radius有个内半径和外半径的区别；
+   border-radius半径值小于于等于border-width差值时，圆角内角为直角；
+   border-radius半径值大于border-width差值时，圆角内角具有圆角效果，圆角半径为他们的差值；
+2）元素相邻边有不同的宽度时，这个角将会从宽的边平滑到窄的一边，其中一个边甚至可以是0，元素相邻转角由大向小转。
+
+
+
+制作特殊图形：
+1）圆形
+2）半圆
+3）扇形
+4）椭圆
+
+
+
+
+
+
+四）盒子阴影box-shadow
+
+语法：
+box-shadow:none | inset(阴影类型，内阴影，不写就是外阴影  x-offset（阴影水平偏移量）  y-offset（阴影垂直偏移量）  blur-radius（阴影模糊半径）  spread-radius（阴影扩展半径）  color（阴影颜色）)
+
+便捷记忆：
+box-shadow:右  下  模糊程度  颜色；（肉夹馍）
+
+多阴影时用逗号隔开：
+box-shadow:0 0 0 1px red,
+           0 0 0 5px blue,
+           0 0 0 8px blue,
+           0 0 0 12px blue,
+           0 0 0 16px blue,
+           0 0 0 20px blue,
+           0 0 0 24px blue;
+
+
+
+
+
+
+
+
+四、背景
+
+背景的基本属性：
+background-color
+background-image
+background-repeat
+background-position
+background-attachment
+
+背景的新增属性：
+background-origin  绘制背景图片的起点  padding-box   border-box   content-box
+background-clip    背景图片的显示范围  padding-box border-box content-box
+
+ 		   拓展：
+		   背景图片填充文本的效果（只有-webkit-浏览器支持）：
+		   -webkit-background-clip:text;
+		   -webkit-text-fill-color: transparent
+
+background-origin和background-clip  仅适用于不平铺的背景
+
+
+background-size    背景图片的尺寸大小  
+		   auto   数值（宽  高）  
+		   百分数(盒子宽高的百分比)  
+		   cover（背景图填充整个容器，直到最小边填充满为止）  
+		   contain（保持背景图片完整显示在容器内）
+
+
+多背景：
+background:url(images/bg-bl.png) no-repeat bottom left,
+	   url(images/bg-br.png) no-repeat bottom right,
+	   url(images/bg-tl.png) no-repeat top left,
+	   url(images/bg-tr.png) no-repeat top right,
+	   url(images/bg-repeat.png);
+
+

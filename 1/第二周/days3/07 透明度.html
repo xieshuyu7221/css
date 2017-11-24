@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+/*如果父盒子和子盒子都有透明度，那么 子盒子的透明度是父子之积*/
+	*{ padding:0; margin:0;}
+	.all{ width:200px; height:200px; background:#000;}
+	.box{ width:100px; height:300px; background:#000;opacity:.35; filter:alpha(opacity=35)}
+
+</style>
+</head>
+<body>
+	<div class="all">
+    	<div class="box"></div>
+    </div>
+</body>
+</html>

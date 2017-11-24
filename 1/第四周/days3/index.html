@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.all{
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	overflow:hidden;
+	position:relative;
+	background:#ff0;}
+.all div{
+	position:absolute;
+	color:#000;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:#9f9;
+	text-align:center;
+	line-height:300px;
+	font-size:100px;}
+.all div:nth-child(1){
+	background:#096}
+.all:hover div:nth-child(2){
+	backface-visibility:hidden;
+	transform:rotatey(180deg)}
+</style>
+</head>
+
+<body>
+<div class="all">
+	<div>背</div>
+    <div>正</div>
+</div>
+</body>
+</html>

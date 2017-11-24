@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+fieldset{ border:2px solid #0f0; }
+legend{ border:1px solid #0ff; }
+</style>
+</head>
+
+<body>
+<!--表单域，表单控件，提示信息-->
+
+<form name="表单名字" method="提交方式：get/post" action="目标地址">
+	<fieldset>
+    	<legend>字段集标题</legend>
+        <fieldset>
+        	<legend>个人信息</legend>
+	<label for="username">账号:</label>
+    <input type="text" id="username" placeholder="账号" name="zhanghao" /><br /><br />
+    密码：<input type="password" name="password" placeholder="密码"/><br /><br />
+    性别：<input type="radio" name="sex" value="boy" checked id="man" />
+         <label for="man">男</label>
+         <input type="radio" name="sex" value="girl" id="woman"  />
+         <label for="woman">女</label><br /><br />
+    爱好:
+    <input type="checkbox" name="like" value="youyong" checked/>游泳
+    <input type="checkbox" name="like" value="paobu" checked/>跑步
+    <input type="checkbox" name="like" value="daima" />打代码
+    <input type="checkbox" name="like" value="shuijiao" disabled/>睡觉
+    <input type="checkbox" name="like" value="chifan" id="eat" />
+    <label for="eat">吃饭</label>
+    <input type="checkbox" name="like" value="wangzhe" id="rongyao" />
+    <label for="rongyao">王者荣耀</label><br /><br />
+    <input type="submit" value="注册" /><br /><br />
+    <input type="reset" value="重置" /><br /><br />
+    <input type="button" value="普通按钮" /><br /><br />
+    <input type="image" src="images/btn.jpg" /><br /><br />
+    <input type="file" multiple /><br /><br />
+    </fieldset>
+    <fieldset>
+    <legend>其他信息</legend>
+    出生年月
+    <select>
+    	<option>1990年</option>
+    	<option>1991年</option>
+    	<option>1992年</option>
+    	<option>1993年</option>
+    	<option>1994年</option>
+    	<option>1995年</option>
+    	<option>1996年</option>
+    	<option selected>1997年</option>
+    	<option>1998年</option>
+    	<option>1999年</option>
+    </select>
+    <select>
+    	<option>1月</option>
+    	<option>2月</option>
+    	<option selected>3月</option>
+    	<option>4月</option>
+    	<option>5月</option>
+    	<option>6月</option>
+    	<option>7月</option>
+    </select><br/><br/>
+    户口所在地
+    <select>
+    	<optgroup label="北京">
+        	<option>昌平区</option>
+        	<option>海淀区</option>
+        	<option>朝阳区</option>
+        	<option>西城区</option>
+        	<option>东城区</option>
+        	<option>通州区</option>
+        	<option>大兴区</option>
+        </optgroup>	
+    	<optgroup label="上海">
+        	<option>黄埔区</option>
+        	<option>浦东区</option>
+        	<option>徐家汇区</option>
+        	<option>陆家嘴区</option>
+        </optgroup>	
+    	<optgroup label="辽宁">
+        	<option>大连</option>
+        	<option>沈阳</option>
+        	<option>鞍山</option>
+        	<option>盘锦</option>
+        	<option>本溪</option>
+        	<option>锦州</option>
+        	<option>丹东</option>
+        	<option>铁岭</option>
+        	<option>葫芦岛</option>
+        	<option>朝阳</option>
+        	<option>抚顺</option>
+        	<option>庄河</option>
+        	<option>营口</option>
+        	<option>鲅鱼圈</option>
+        	<option>旅顺</option>
+        	<option>海城</option>
+        	<option>辽阳</option>
+        	<option>阜新</option>
+        	<option>北镇</option>
+        	<option>沟帮子</option>
+        </optgroup>	
+    </select>
+    自我评价：<textarea rows="5" cols="30" style="resize:none;">自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价自我评价</textarea>
+    s</fieldset>
+    
+    </fieldset>
+</form>
+</body>
+</html>

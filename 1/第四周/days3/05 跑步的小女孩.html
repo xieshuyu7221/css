@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{
+		width:180px;
+		height:300px;
+		border:1px solid #ccc;
+		background:url(images/charector.png) no-repeat;
+		animation:run .2s step-start 0s infinite;}
+@keyframes run{
+	from{
+		background-position-x:0;}
+	16.67%{
+		background-position-x:-180px;}	
+	33.34%{
+		background-position-x:-360px;}	
+	50%{
+		background-position-x:-540px;}	
+	66.67%{
+		background-position-x:-720px;}	
+	83.34%{
+		background-position-x:-900px;}	
+	100%{
+		background-position-x:-1080px;}	
+}
+</style>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>

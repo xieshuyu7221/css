@@ -1,0 +1,331 @@
+
+
+
+CSS核心属性
+
+一、CSS属性组成和作用
+
+属性：属性值
+
+1）每个css样式都必须由两部分组成：选择符（Selector）和声明（Decleration）
+
+注：声明又包括属性（Properyt）和属性值（Value）
+
+2）css属性：属性是指定选择符具有的属性，他是css的核心，css 2.0共有150多个属性；
+
+3）css属性值：属性值包括法定属性值和常规的数值加单位或颜色值(colorValue)；
+
+如（25px）。 
+
+div{width:400px;} 
+
+
+
+
+
+
+二、CSS核心属性 
+
+A、关于文本的css声明
+
+
+1、文本大小：{font-size:value;}
+
+　　例：div{font-size：12px；}
+
+	div{font-size：14px；}
+
+
+说明：
+
+1） 属性值为数值时，必须给属性值加单位，属性值为0时除外。
+2） 单位还可以是pt，pt是绝对单位，在dpi是96的情况下，9pt=12px,12pt=16px。
+3） 单位还可以是em，1em叫一个字节,默认情况下，1em=16px,0.75em=12px;
+
+
+px
+px是pixel缩写，是基于像素的单位.在浏览网页过程中，屏幕上的文字、图片等会随屏幕的分辨率变化而变化，一个100px宽度大小的图片，在800×600分辨率下，要占屏幕宽度的1/8，但在1024×768下，则只占约1/10。所以如果在定义字体大小时，使用px作为单位，那一旦用户改变显示器分辨率从800到1024，用户实际看到的文字就要变“小”（自然长度单位），甚至会看不清，影响浏览。 
+
+em
+em：即％，是相对单位，是一个相对长度单位，最初是指字母M的宽度，故名em。现指的是字符宽度的倍数，用法类似百分比，如：0.8em, 1.2em,2em等。通常1em=16px。，一般用来测量长度的通用单位(例如元素周转的页边空白和填充),当用于指定字体大小时,em单位是指父元素的字体大小。
+在一个页面上给定了一个父元素的字体大小,这样就可以通过调整一个元素来成比例的改变所有元素大小.它可以自由缩放,比如用来制作可伸缩的样式表。
+
+pt
+PT是point(磅)缩写，是一种固定长度的度量单位,大小为1/72英寸。如果在web上使用pt做单位的文字，字体的大小在不同屏幕（同样分辨率）下一样，这样可能会对排版有影响，但在Word中使用pt相当方便。因为使用Word主要目的都不是为了屏幕浏览，而是输出打印。当打印到实体时，pt作为一个自然长度单位就方便实用了：比如Word中普通的文档都用“宋体 9pt”，标题用“黑体 16pt”等等，无论电脑怎么设置，打印出来永远就是这么大。
+
+
+4)使用关键字(不是绝对相等的)
+xx-small   =  9px
+x-small    =  11px
+small       =  13px
+medium     =  16px  
+large      =  19px
+x-large    =  23px
+xx-large   =  27px
+
+以 medium 作为基础参照，
+xx-small：相当于medium 3/5 ，
+x-small: 相当于medium 3/4        (h6)，
+small: 相当于medium 8/9           (h5)，
+medium: 相当于medium 1         (h4)，
+large: 相当于medium 6/5           (h3)，
+x-large: 相当于medium 3/2        (h2)，
+xx-large: 相当于medium 2/1      (h1)
+
+谷歌浏览器识别最小字体为12px;
+
+2、文本颜色：{color:颜色值;}
+
+说明：
+
+用十六进制表示颜色值：
+
+0  1  2  3  4   5  6  7  8  9
+0  1  2  3  4   5  6  7  8  9  A  B  C  D  E  F
+ff-----15*16^1+ 15*16^0 == 15*17 == 255
+
+#ff0000
+ RGB
+
+
+十六进制转换十进制：
+f = 15
+ff   =   15*16^1 + 15*16^0 = 255
+
+颜色模式：光色模式
+R      G      B
+FF     00     00       #f00
+颜色值的缩写：
+当表示三原色的三组数字同时相同时，可以缩写为三位   #f60;---#ff6600
+当用十六进制表示颜色值时，需要在颜色值前加“#”
+#  fa   00    00   
+#cfb   #666   
+
+三个值全都相同时为灰色，数值越大颜色越浅。
+#f7f7f7-------背景
+#3e3e3e-----正文
+#909090-----浅色文本
+#999
+#ccc------边框
+#eee------背景
+
+3、文本字体：{font-family:"中文字体1"，字体2，字体3；}
+拓展：
+衬线体------有额外修饰的字体--宋体
+非衬线体------没有额外修饰的字体--黑体，微软雅黑
+
+
+说明：浏览器首先会寻找字体1、如存在就使用改字体来显示内容，如在字体1不存在的情况下，则会寻找字体2，如字
+体2也不存在，按字体3显示内容，如果字体3 也不存在；则按系统默认字体显示；
+
+当字体是中文字体时，需加双引号；
+
+当英文字体中有空格时，需加双引号如（“Times New Roman”）
+
+当英文字体只有一个单词组成是不加双引号；如：（Arial）；
+
+
+Windows中文版本操作系统下，中文默认字体为宋体或者新宋体，英文字体默认为Arial.
+
+系统字体所在位置：C:\Windows\Fonts
+
+4、加粗：{font-weight:bolder(更粗)、lighter（更细）/bold（加粗）/normal（常规）/100—900;} 
+
+说明：在css规范中，把字体的粗细分为9个等级，分别为100——900，其中100对应最轻的字体变形，而900对应最重的
+字体变形，
+
+一般
+500常规字体
+600-900加粗字体
+100-400变细（常规）
+
+bold  加粗
+100  变细
+
+h1-h6{font-weight:normal}
+
+
+5、倾斜：font-style：italic(倾斜)/normal（常规显示）;
+
+   i,em{ font-style:normal;}
+
+
+6、水平对齐方式{text-align:left/right/center/justify(两端对齐，存在一定的兼容性问题);}
+
+
+7、垂直对齐方式{vertical-align:top/bottom/middle;}
+
+   vertical-align对  单元格显示方式：table-cell  的元素才会起作用.
+
+   要实现上下垂直居中对齐，可以采用如下样式
+
+	display（元素类型的转换）:table-cell; /*按照单元格的样式显示元素*/
+
+	vertical-align:middle;   /*垂直居中对齐*/
+
+
+
+
+
+
+
+
+
+
+
+8、行高{line-height:normal/value;}
+
+说明：
+
+1）当单行文本的行高等于容器高时，可实现单行文本在容器中垂直方向居中对齐；
+
+2) 当单行文本的行高小于容器高时，可实现单行文本在容器中垂直方向居中对齐以上任意位置的定位；
+
+3) 当单行文本的行高大于容器高时，可实现单行文本在容器中垂直方向居中对齐以下任意位置的定位。（IE6及以下版本存在浏览器兼容问题）
+
+倍行高：{line-height:2;} 2倍 ，{line-height:1.5;}1.5倍；
+
+注：当使用倍行高时，不加PX，指的是当前文字字号的倍数；
+
+
+9、首行缩进：{text-indent:value;}
+
+说明：text-indent:2em;
+
+1）text-indent可以取负值；
+
+2）text-indent属性只对第一行起作用。
+
+
+
+
+
+
+
+
+10、文字属性简写：font:12px（字号）/100px（行高）  "宋体"; 
+
+font属性的简写：
+
+说明:font的属性值应按以下次序书写(各个属性之间用空格隔开)
+
+顺序: font-style  font-weight  font-size / line-height  font-family
+
+(1)简写时 , font-size和line-height只能通过斜杠/组成一个值，不能分开写。
+
+(2) 顺序不能改变 ,这种简写法只有在同时指定font-size和font-family属性时
+
+才起作用,你没有设定font-weight , font-style , 以及font-varient ,他们会使用缺省值（默认值）。
+
+
+11、字间距{letter-spacing:value;}控制英文字母和汉字的字距。（英文字母和字母）
+
+12、词间距{word-spacing:value;}控制英文单词词距。（通用于英文词和词之间的间距）
+
+#13、文本流控制{layout-flow:horizontal/vertical-ideographic;}（只支持IE浏览器） 
+说明：
+1）horizontal:自左向右
+2）vertical-ideographic:自上而下
+
+
+
+
+
+14、文本修饰：text-decoration:none/underline/overline/line-through/blink.(网景浏览器支持blink属性)
+说明：
+none:没有修饰
+
+underline:添加下划线
+
+overline:添加上划线
+
+line-through:添加删除线
+
+blink：闪烁
+
+
+
+
+
+
+
+
+15、border:3px solid red;  (1px solid #ccc)
+
+边框border:线型（solid/dashed/dotted/double）   粗细（数值+单位） 颜色;
+
+solid:实线，dashed:线状虚线，dotted:点状虚线，double:双线(至少3px)，
+
+border按功能分：
+边框大小   border-width;
+边框类型   border-style;
+边框颜色   border-color;
+
+border按方向分：
+右边框 border-right；
+左边框 border-left；
+上边框 border-top；
+下边框 border-bottom:
+
+扩展：
+边框的楔形问题
+
+
+16、list-style  列表符号
+list-style:none;  去掉列表符号
+ul{list-style-type:square/circle/disc/none;}   
+ul{list-style-position:inside/outside;}       li的里和外
+li{ list-style-image:url(images/list.jpg);}   
+
+
+
+
+
+
+
+
+17、关于背景的css声明
+1、背景颜色
+语法：选择符{background-color:颜色值;} 
+
+2、背景图片的设置
+语法：background-image：url(背景图片的路径及全称)；
+说明：
+网页上有两种图片形式：插入图片<img src="" title="" alt=""  />、背景图；
+插入图片：属于网页内容，也就是结构，以内容的形式呈递。
+背景图：属于网页的表现，主要用来装饰页面。
+3、背景图片的显示原则
+   1）容器尺寸等于图片尺寸，背景图片正好显示在容器中;
+   2）容器尺寸大于图片尺寸，背景图片将默认平铺，直至铺满容器；
+   3）容器尺寸小于图片尺寸，只显示元素范围以内的背景图。 
+4、背景图片平铺属性
+语法：选择符{background-repeat:no-repeat/repeat/repeat-x/repeat-y }
+no-repeat:不平铺  repeat：平铺（默认值）repeat-x：横向平铺 repeat-y ：纵向平铺
+
+5、背景图片的位置
+语法：选择符{background-position:水平方向  垂直方向;}
+水平方向上的对齐方式（left/center/right）或具体数值 
+垂直方向上的对齐方式(top/center/bottom)或具体数值
+用英文关键字时，方向可以对调；top  right。只要有数字就不能对调。
+只写一个值，第二个默认是center。
+// 组织  文件夹选项  查看  隐藏后缀名
+6、背景属性的缩写语法：background:属性值1   属性值2   属性值3；
+背景缩写：background:#f60 url（背景图片的路径及全称） no-repeat center top；
+注意：背景定位的两个值要挨着，并且顺序不能颠倒。
+
+
+切图步骤：
+选取选中要切的图
+复制 ctrl+C
+新建 ctrl+N
+enter
+粘贴 ctrl+V
+保存 ctrl+shift+alt+S
+
+
+
+
+
+
+
+

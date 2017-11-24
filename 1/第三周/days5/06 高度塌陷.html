@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0;}
+.all{ width:600px; background:#ff0; margin:0 auto;}
+.all div{ width:200px; height:240px; background:#0f0;}
+.all .box1{ float:left}
+.all .box2{ float: right}
+/*.c{ clear:both; height:0; overflow:hidden; line-height:0; font-size:0;}
+*/
+.all::after{ content:""; display:block;clear:both; height:0; overflow:hidden; line-height:0; font-size:0; visibility:hidden;}
+/* visibility:hidden;  隐藏，占位
+display:none;   彻底消失，不占位
+*/
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="all">
+	<div class="box1"></div>
+	<div class="box2"></div>
+    
+</div>
+</body>
+</html>

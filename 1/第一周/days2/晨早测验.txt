@@ -1,0 +1,71 @@
+1、WEB标准的组成是？
+结构  变现  行为
+
+2、结构和表现标准是由哪个机构提出的？
+W3C   万维网联盟
+
+3、HTML的中英文全称分别是？
+超文本标记语言
+hyper  text  markup language
+
+4、请写出HTML5的基本结构
+<!doctype html>
+<html>
+	<head>
+		<meta  charset="utf-8"/>
+		<title></title>
+	</head>
+	<body></body>
+</html>
+
+5、HTML的语法是？
+常规标记：<标记  属性=“属性值”></ 标记>
+空标记：<标记  属性=“属性值”/>
+
+6、定义段落的标记是？
+<p></p>
+
+7、请写出三个空标记 
+<br/>   <hr/>   <img/>  <meta/>
+
+8、定义斜体的两个标记是？
+<i></i>  <em></em>
+
+9、HTML中有三种列表分别是？请分别写出他们的基本结构。
+有序  无序  自定义
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<ul><li></li><li></li><li></li><li></li><li></li></ul>
+<dl><dt></dt><dd></dd></dl>
+
+10、插入图片的标记是？请写出，并要求写出相关属性
+<img  src="路径"  title="提示信息"  alt="替换文本" />
+
+11、请给一个图片添加超链接
+<a href="#"><img  src="" /></a>
+
+12、超链接在新窗口打开的属性及属性值是？
+target="_blank"
+
+13、定义单元格与单元格之间的距离是哪个属性？
+cellspacing
+
+14、定义表格的背景色用的是哪个属性？
+bgcolor
+
+15、单元格合并行用的是哪个属性？
+rowspan
+
+16、定义数据表格的边框是哪个属性？
+border
+
+17、表格里面水平对齐的属性是？
+align
+
+18、加了P标签和不加P标签的文本本质上有什么区别？
+语义
+
+19、定义单元格与内容之间的距离是哪个属性？
+cellpadding
+
+20、定义无序列表符号的属性是？取值有哪些？
+type="disc/circle/square/none"

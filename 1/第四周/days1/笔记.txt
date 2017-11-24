@@ -1,0 +1,102 @@
+一、移动端页面布局
+
+
+
+1、弹性布局（100%布局）——拉勾网、天猫首页
+
+好处：充分发挥大手机的优势——显示内容越多
+缺点：屏幕过大，间距过大，比例失调。
+
+特点：
+- 顶部与底部的bar不管分辨率怎么变，它的高度和位置都不变；
+- 中间每条招聘信息不管分辨率怎么变，招聘公司的图标等信息都位于条目的左边，薪资都位于右边。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2、等比缩放布局（rem布局）——网易、淘宝首页
+
+1) rem
+
+
+- 视口(viewport)设置：<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+- 在html上根据不同分辨率设置不同font-size，通过js计算出来
+
+- 页面里除了font-size之外的其它css尺寸都使用了rem作为单位
+- 正文的font-size需要额外的媒介查询，并且不使用rem
+
+在css中我们一般使用px作为单位，在桌面浏览器中css的1个像素往往都是对应着电脑屏幕的1个物理像素，这可能会造成我们的一个错觉，那就是css中的像素就是设备的物理像素。但实际情况却并非如此，css中的像素只是一个抽象的单位，在不同的设备或不同的环境中，css中的1px所代表的设备物理像素是不同的。在为桌面浏览器设计的网页中，我们无需对这个津津计较，但在移动设备上，必须弄明白这点。在早先的移动设备中，屏幕像素密度都比较低，如iphone3，它的分辨率为320x480，在iphone3上，一个css像素确实是等于一个屏幕物理像素的。后来随着技术的发展，移动设备的屏幕像素密度越来越高，从iphone4开始，苹果公司便推出了所谓的Retina屏，分辨率提高了一倍，变成640x960，但屏幕尺寸却没变化，这就意味着同样大小的屏幕上，像素却多了一倍，这时，一个css像素是等于两个物理像素的。
+
+
+
+
+
+devicePixelRatio设备像素比
+视网膜屏幕
+
+- 动态设置viewport的scale，淘宝触屏版首页布局的前提是viewport的scale根据devicePixelRatio动态设置：在devicePixelRatio为1的时候，scale为1；在devicePixelRatio为2的时候，scale为0.5；在devicePixelRatio为3的时候，scale为0.3333
+
+- 动态计算html的font-size：font-size = deviceWidth / 10
+		
+- 布局的时候，各元素的css尺寸=设计稿标注尺寸/设计稿横向分辨率/10
+
+- font-size可能需要额外的媒介查询，并且font-size不使用rem
+- 设置一个临界点，当设备竖着时横向物理分辨率大于1080时，html的font-size就不会变化了可以去访问电脑版页面了
+
+1000px
+
+
+1rem------100px     root-font-size
+30px------0.3rem
+
+
+<script type="text/javascript">
+
+	// 把尺寸放大N倍（N是window.devicePixelRatio）
+	var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+
+	document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+
+	// 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+	var scale = 1/window.devicePixelRatio;
+	var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+	document.getElementById("vp").content = mstr;
+
+</script>
+
+html    100px     
+div      44px-----.44rem
+
+
+
+
+
+
+
+
+2)vw  和 vh 的应用
+
+vw  相对于视窗的宽度：视窗宽度是100vw
+vh  相对于视窗的高度：视窗高度是100vh
+
+1vw  =  1%的视窗宽
+1vh  =  1%的视窗高
+
+视窗所指的是浏览器内部的可视区域大小，不包含任务栏标题栏以及底部的工具栏的浏览器区域大小。
+
+应；用场景一：点击图片，弹窗查看原始大图；
+应用场景二：视区覆盖，弹出框的半透明覆盖层
+
+
+
